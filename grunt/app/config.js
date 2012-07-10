@@ -30,6 +30,7 @@ require.config({
     },
 
     handlebars: {
+      deps: ["use!bootstrap"],      
       attach: "Handlebars"
     },
 

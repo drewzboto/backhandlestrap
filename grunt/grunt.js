@@ -138,8 +138,11 @@ module.exports = function(grunt) {
       }
     },
 
-    copy: {
+    copy: {     
       compile: {
+        options: {
+          basePath: "assets/img"
+        },         
         files: {
           "dist/compile/img": "assets/img/*"
        }
