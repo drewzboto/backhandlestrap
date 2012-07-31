@@ -1,46 +1,50 @@
 // Set the require.js configuration for your application.
-require.config({
-  // Initialize the application with the main application file
-  deps: ["main"],
+requirejs.config({
+	// Initialize the application with the main application file
+	deps: ["main"],
 
-  paths: {
-    // JavaScript folders
-    libs: "../assets/js/libs",
-    plugins: "../assets/js/plugins",
+	paths: {
+		// JavaScript folders
+		libs: "../assets/js/libs",
 
-    // Libraries
-    jquery: "../assets/js/libs/jquery",
-    underscore: "../assets/js/libs/underscore",
-    backbone: "../assets/js/libs/backbone",
-    handlebars: "../assets/js/libs/handlebars.runtime-1.0.0.beta.6",
-    bootstrap: "../assets/js/libs/bootstrap",
+		// Libraries
+		jquery: "../assets/js/libs/jquery",
+		underscore: "../assets/js/libs/underscore",
+		backbone: "../assets/js/libs/backbone",
+		handlebars: "../assets/js/libs/handlebars.runtime",
+		bootstrap: "../assets/js/libs/bootstrap",
+		"backbone.layoutmanager": "../assets/js/libs/backbone.layoutmanager",
+		jsonpath: "../assets/js/libs/jsonpath"
+	},
 
-    // Shim Plugin
-    use: "../assets/js/plugins/use"
-  },
+	shim: {
+		"backbone": {
+			deps: ["underscore", "jquery"],
+			exports: "Backbone"
+		},
 
-  use: {
-    backbone: {
-      deps: ["use!underscore", "jquery"],
-      attach: "Backbone"
-    },
+		"underscore": {
+			exports: "_"
+		},
 
-    underscore: {
-      attach: "_"
-    },
+		"handlebars": {
+			deps: ["bootstrap"],
+			exports: "Handlebars"
+		},
 
-    handlebars: {
-      deps: ["use!bootstrap"],      
-      attach: "Handlebars"
-    },
+		"bootstrap": {
+			deps: ["jquery"],
+			exports: "Bootstrap"
+		},
 
-    bootstrap: {
-      deps: ["jquery"],
-      attach: "Bootstrap"
-    },
+		"backbone.layoutmanager": {
+			deps: ["backbone"],
+			exports: "Backbone.LayoutManager"
+		},
 
-    "plugins/backbone.layoutmanager": {
-      deps: ["use!backbone"]
-    }
-  }
+		"jsonpath": {
+			deps: [],
+			exports: "jsonpath"
+		}
+	}
 });

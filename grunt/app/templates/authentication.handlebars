@@ -1,0 +1,18 @@
+<div class="span3">
+{{#if authenticated}}
+	Welcome {{username}}
+	<a href="#" class="btn pull-right">Logout</a>
+{{else}}
+	<div id="login-errors">
+
+	</div>
+	<form id="login-form">
+		<input type="text" class="" id="auth-username" placeholder="Email" value="{{username}}">
+		<input type="password" class="" id="auth-password" placeholder="Password">
+		<label class="checkbox">
+			<input type="checkbox"> Remember me
+		</label>
+		<button type="submit" class="btn pull-right">Sign in</button>
+	</form>
+{{/if}}
+</div>

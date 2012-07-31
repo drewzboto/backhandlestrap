@@ -1,5 +1,5 @@
 {
-  "name": "demo-backbone",
+  "name": "backhandlestrap",
   "version": "0.0.1",
   "dependencies": {
     "jsdom": "~0.2.14",
@@ -7,5 +7,9 @@
   },
   "devDependencies": {
     "grunt-contrib": "~0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drewzboto/backhandlestrap.git"
   }
 }

@@ -1,29 +1,29 @@
 define([
-  "namespace",
+  "app",
 
   // Libs
-  "use!backbone"
+  "backbone"
 
   // Modules
 
   // Plugins
 ],
 
-function(namespace, Backbone) {
+function(app, Backbone) {
 
   // Create a new module
-  var Example = namespace.module();
+  var Docs = app.module();
 
   // This will fetch the tutorial template and render it.
-  Example.Views.Index = Backbone.View.extend({
-    template: "example",
+  Docs.Views.Index = Backbone.View.extend({
+    template: "docs",
 
     serialize: function() {
-      return { name: "World" };
+      return { };
     }
   });
 
   // Required, return the module for AMD compliance
-  return Example;
+  return Docs;
 
 });
